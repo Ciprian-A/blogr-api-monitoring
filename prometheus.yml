@@ -7,5 +7,4 @@ scrape_configs:
     dns_sd_configs:
       - names:
           - '${BACKEND_INTERNAL_URL}'
-        type: A
-        port: 10000
+        type: SRV
