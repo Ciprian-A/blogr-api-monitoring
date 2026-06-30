@@ -7,6 +7,6 @@ scrape_configs:
     scheme: https
     http_headers:
       X-Metrics-Token:
-        vakues: ['${METRICS_TOKEN}']
+        values: ['${METRICS_TOKEN}']
     static_configs:
       - targets: ['${BACKEND_INTERNAL_URL}']
