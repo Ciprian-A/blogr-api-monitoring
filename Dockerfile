@@ -11,7 +11,7 @@ ENV BACKEND_INTERNAL_URL=${BACKEND_INTERNAL_URL}
 ENV METRICS_TOKEN=${METRICS_TOKEN}
 
 RUN envsubst < /etc/prometheus/prometheus.template > /etc/prometheus/prometheus.yml
-
+RUN cat /etc/prometheus/prometheus.yml
 FROM prom/prometheus:latest
 
 COPY --from=builder /etc/prometheus/prometheus.yml /etc/prometheus/prometheus.yml
