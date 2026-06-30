@@ -4,5 +4,8 @@ global:
 scrape_configs:
   - job_name: 'blogr-api-service'
     metrics_path: '/metrics'
-    static_configs:
-      - targets: ['${BACKEND_INTERNAL_URL}:10000']
+    dns_sd_configs:
+      - names:
+          - '${BACKEND_INTERNAL_URL}'
+        type: A
+        port: 10000
