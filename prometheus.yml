@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'blogr-api-service'
+    metrics_path: '/metrics'
+    dns_sd_configs:
+      - names:
+          - '${BACKEND_INTERNAL_URL}'
+        type: A
+        port: 10000
