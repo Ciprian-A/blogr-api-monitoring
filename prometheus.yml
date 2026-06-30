@@ -5,5 +5,8 @@ scrape_configs:
   - job_name: 'blogr-api-service'
     metrics_path: '/metrics'
     scheme: https
+    http_headers:
+      X-Metrics-Token:
+        secrets: ['${METRICS_TOKEN}']
     static_configs:
       - targets: ['${BACKEND_INTERNAL_URL}']
